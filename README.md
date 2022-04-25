@@ -1,6 +1,6 @@
 # Scrapbook V2
 
-*Scrapbook is the canonical place for Hack Clubbers to share and discover things other Hack Clubbers are working on.*
+**Scrapbook is the canonical place for Hack Clubbers to share and discover things other Hack Clubbers are working on.**
 
 As a Hack Clubber, you are always learning and building things. Many of us have found that showing up every day has been key to our success in learning. Even if we didn’t make something big or impressive, showing up consistently and making something was key.
 
@@ -43,39 +43,41 @@ TODO:
 
 ## Running locally
 
-1. Clone this repository
+Clone this repository:
 
     $ git clone https://github.com/hackclub/scrapbook_v2.git && cd scrapbook_v2
 
-1. Install dependencies
+Install dependencies:
 
     $ yarn
 
-1. Send a message mentioning @creds in Hack Club's Slack asking for the .env file
+Send a message mentioning `@creds` in [Hack Club's Slack](https://hackclub.com/slack/) asking for the `.env` file
 
-1. Start server
+Start server:
 
     $ yarn rw dev
 
-1. It should automatically open, but if not, open your server
+It should automatically open, but if not, open your server:
 
     $ open http://localhost:8910/
 
 ## Viewing your database
-1. Open Prisma Studio
+
+Open Prisma Studio:
 
     $ yarn rw prisma studio
 
-1. It should automatically open, but if not, open your server
+It should automatically open, but if not, open your server
 
     $ open http://localhost:5555/
 
 ## GraphQL Playground
-1. Start the application server if it hasn't been started yet
+
+Start the application server if it hasn't been started yet:
 
     $ yarn redwood dev
 
-1. View your GraphQL playground
+View your GraphQL playground:
 
     $ open http://localhost:8911/graphql
 
