@@ -20,6 +20,29 @@ And, of course, your Scrapbook should be a representation of you. Akin to the My
 
 Scrapbook V2 is a fork of the original Scrapbook. The original Scrapbook was made during the Summer of Making, and is a fantastic Slack integration tool for the online Hack Club community. The purpose of V2 is to take the original Scrapbook vision and expand it to the rest of the community, as a lot of Hack Clubbers aren't on Slack. V2 will make Scrapbook a fully featured web application, so all Hack Clubbers can share their learnings without Slack being a barrier to entry. But have no fear, Slack integration isn't going anywhere!
 
+### New feature set:
+_Note: this list is WIP!_
+- Ability to sign up and log in on the web
+- Ability to link your slack to your web account
+- Posting from the web
+- Filtering the aggregate view (trending, recent posts, brand new posters)
+- More flexibility around posting (text-only posts, longer form posts)
+- Showing discussion and reaction count on the web
+- Ability to increment reactions from web
+- Ability to add tags to a post and filter by those tags
+- Ability to mark posts as draft (for longer-form posts)
+- Ability to add CSS from the web
+- Ability to add CSS to your post in the aggregate views
+- Highlighting new user posts in the aggregate views
+- Monthly topics
+- APIs for your post data
+- Posting web posts to Slack
+
+### Potential future ideas:
+- Chrome extension for adding it to your New Tab page
+- Pinning posts to the top
+- Streak badges
+
 ## How to share
 
 ### Via the web
@@ -86,6 +109,8 @@ View your GraphQL playground:
 Contributions are encouraged and welcome! There are two GitHub repositories that contain code for Scrapbook: the [Scrapbook V2 website](https://github.com/hackclub/scrapbook_v2#contributing) and [Scrappy the Slack bot](https://github.com/hackclub/scrappy#contributing).
 
 Development chatter happens in the [#scrapbook-dev](https://app.slack.com/client/T0266FRGM/C035D6S6TFW) channel in the [Hack Club Slack](https://hackclub.com/slack/).
+
+TODO: GitHub Project
 
 ## License
 
