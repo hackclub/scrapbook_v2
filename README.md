@@ -32,16 +32,45 @@ Your Scrapbook is automatically generated for you when you make your first Scrap
 
 ### RedwoodJS
 
-TBD
+TODO
 
-## How to run locally
+## Setup
 
-TBD
+TODO:
+- [ ] yarn
+- [ ] node, nvm
+- [ ] local postgres setup
+
+## Running locally
+
+1. Clone this repository
+  $ git clone https://github.com/hackclub/scrapbook_v2.git && cd scrapbook_v2
+1. Install dependencies
+  $ yarn
+1. Send a message mentioning @creds in Hack Club's Slack asking for the .env file
+1. Start server
+  $ yarn rw dev
+1. It should automatically open, but if not, open your server
+  $ open http://localhost:8910/
+
+## Viewing your database
+1. Open Prisma Studio
+  $ yarn rw prisma studio
+1. It should automatically open, but if not, open your server
+    $ open http://localhost:5555/
+
+## GraphQL Playground
+1. Start the application server if it hasn't been started yet
+  $ yarn redwood dev
+1. View your GraphQL playground
+  $ open http://localhost:8911/graphql
 
 ## Contributing
 
-TBD
+Contributions are encouraged and welcome! There are two GitHub repositories that contain code for Scrapbook: the [Scrapbook V2 website](https://github.com/hackclub/scrapbook_v2#contributing) and [Scrappy the Slack bot](https://github.com/hackclub/scrappy#contributing).
+
+Development chatter happens in the [#scrapbook-dev](https://app.slack.com/client/T0266FRGM/C035D6S6TFW) channel in the [Hack Club Slack](https://hackclub.com/slack/).
 
 ## License
 
-TBD
+TODO
