@@ -44,26 +44,40 @@ TODO:
 ## Running locally
 
 1. Clone this repository
-  $ git clone https://github.com/hackclub/scrapbook_v2.git && cd scrapbook_v2
+
+    $ git clone https://github.com/hackclub/scrapbook_v2.git && cd scrapbook_v2
+
 1. Install dependencies
-  $ yarn
+
+    $ yarn
+
 1. Send a message mentioning @creds in Hack Club's Slack asking for the .env file
+
 1. Start server
-  $ yarn rw dev
+
+    $ yarn rw dev
+
 1. It should automatically open, but if not, open your server
-  $ open http://localhost:8910/
+
+    $ open http://localhost:8910/
 
 ## Viewing your database
 1. Open Prisma Studio
-  $ yarn rw prisma studio
+
+    $ yarn rw prisma studio
+
 1. It should automatically open, but if not, open your server
+
     $ open http://localhost:5555/
 
 ## GraphQL Playground
 1. Start the application server if it hasn't been started yet
-  $ yarn redwood dev
+
+    $ yarn redwood dev
+
 1. View your GraphQL playground
-  $ open http://localhost:8911/graphql
+
+    $ open http://localhost:8911/graphql
 
 ## Contributing
 
