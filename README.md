@@ -73,4 +73,5 @@ Development chatter happens in the [#scrapbook-dev](https://app.slack.com/client
 
 ## License
 
-TODO
+
+Hack Club, 2022. [MIT License](LICENSE.txt).
