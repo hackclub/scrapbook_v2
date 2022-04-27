@@ -49,9 +49,11 @@ Your Scrapbook is automatically generated for you when you make your first Scrap
 
 ## Technology
 
+WIP
+
 ### RedwoodJS
 
-TODO
+### Tailwind
 
 ## Setup
 
