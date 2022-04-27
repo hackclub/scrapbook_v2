@@ -4,7 +4,9 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <header>
-        <h1>Scrapbook</h1>
+        <Link to={routes.home()}>
+          <h1>Scrapbook</h1>
+        </Link>
         <nav>
           <ul>
             <li>
