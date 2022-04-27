@@ -10,6 +10,18 @@ generator client {
 
 model Post {
   id        Int      @id @default(autoincrement())
-  body      String
   createdAt DateTime @default(now())
+  body      String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+}
+
+model User {
+  id                  Int       @id @default(autoincrement())
+  email               String    @unique
+  hashedPassword      String
+  salt                String
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
+  posts               Post[]
 }
