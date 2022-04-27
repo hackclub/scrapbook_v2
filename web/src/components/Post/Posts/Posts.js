@@ -96,7 +96,7 @@ const PostsList = ({ posts }) => {
               <td>
                 <nav className="rw-table-actions">
                   <Link
-                    to={routes.post({ postId: post.id, userId: post.authorId })}
+                    to={routes.post({ authorId: post.authorId, postId: post.id })}
                     title={'Show post ' + post.id + ' detail'}
                     className="rw-button rw-button-small"
                   >

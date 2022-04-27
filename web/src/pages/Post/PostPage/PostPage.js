@@ -1,7 +1,7 @@
 import PostCell from 'src/components/Post/PostCell'
 
-const PostPage = ({ id }) => {
-  return <PostCell id={id} />
+const PostPage = ({ postId }) => {
+  return <PostCell postId={postId} />
 }
 
 export default PostPage
