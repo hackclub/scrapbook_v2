@@ -1,20 +1,16 @@
 # Scrapbook V2
 
-**Scrapbook is the canonical place for Hack Clubbers to share and discover things other Hack Clubbers are working on.**
+**Better yourself by chronicling your technical journey.**
 
-As a Hack Clubber, you are always learning and building things. Many of us have found that showing up every day has been key to our success in learning. Even if we didn’t make something big or impressive, showing up consistently and making something was key.
+Scrapbook is the largest community of teenage makers and hackers sharing what they’re learning and working on every day. Hack Clubbers have found that showing up every day has been key to their success in learning.
 
-Some days, our success isn't measured by the amount of code we wrote, or the number of commits we had, but instead by the hours spent debugging an issue with our application that ended up being a single line code fix. Or maybe it was finally pinpointing the perfect magnet to order to get our 3D printer up and running. Or why not the few chapters of your new programming book you read? Whatever success looked like that day, Scrapbook is there to help you share those wins with the rest of the Hack Club community, and keeps you accountable and motivated by recording a streak of how many days in a row you show up.
+1. Log what you worked on today
+2. Earn a streak and get socially meaningful recognition for your progress
+3. Get inspired by what others are doing
 
-Showing up can look like posting a blurb about figuring out how attach a favicon to your site, or maybe sharing a screenshot of the video game character you designed, or it can even be as big as writing an in-depth blog post about how your shader works. Scrapbook allows space for you to decide what success looks like that day, and its goal is to make that process easy.
+Scrapbook integrates with the Hack Club Slack, has an extensive API for integrating into your personal website, and connects with all of the places where you’re already doing work - like GitHub.
 
-Your Scrapbook posts will be the artifacts of your learning journey, a place where people can see all of the interesting things you've been working on. And, if you're in a club, Scrapbook can aggregate your club's posts into one canonical area, making it simple to see your club's success over time. If you end up wanting to display these posts on your own applications, Scrapbook provides APIs to do just that.
-
-Visiting Scrapbook should provide a source of inspiration on what to explore next. Visiting the front page will show you the trending posts, surfacing the most interesting things Hack Clubbers are working on. Monthly topics will be suggested, and the community can participate by posting about their topical learnings. Feeling stuck on what technology to try or what to learn next should be a thing of the past.
-
-One of the best feelings of being a part of a community is having other people be excited about what you're working on. Reactions and discussion from Slack are shown on your posts, and Reactions can be added from the web interface. First time posts to Scrapbook are highlighted in the aggregate views, giving the community a chance to give a warm welcome to new posters.
-
-And, of course, your Scrapbook should be a representation of you. Akin to the MySpace days, your Scrapbook is customizable with the ability to add your own CSS, even allowing the ability to customize how your post shows up in the aggregate views.
+The purpose of Scrapbook is to keep you inspired and accountable on your learning and making journey. Every Scrapbook is unique: you can completely customize yours with CSS, there’s an extensive API to build your entirely own frontend or publishing flow, and both the code and database are open source.
 
 ## What's different in V2?
 
