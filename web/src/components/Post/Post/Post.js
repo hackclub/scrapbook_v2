@@ -1,5 +1,6 @@
 import humanize from 'humanize-string'
 
+import { useAuth } from "@redwoodjs/auth";
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { Link, routes, navigate } from '@redwoodjs/router'
@@ -46,6 +47,8 @@ const checkboxInputTag = (checked) => {
 }
 
 const Post = ({ post }) => {
+  const { currentUser } = useAuth();
+
   const [deletePost] = useMutation(DELETE_POST_MUTATION, {
     onCompleted: () => {
       toast.success('Post deleted')

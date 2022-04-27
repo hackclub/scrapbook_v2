@@ -1,3 +1,4 @@
+import { useAuth } from "@redwoodjs/auth";
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
@@ -12,6 +13,8 @@ const CREATE_POST_MUTATION = gql`
 `
 
 const NewPost = () => {
+  const { currentUser } = useAuth();
+
   const [createPost, { loading, error }] = useMutation(CREATE_POST_MUTATION, {
     onCompleted: () => {
       toast.success('Post created')

@@ -35,7 +35,7 @@ export const Success = ({ post }) => {
   const [updatePost, { loading, error }] = useMutation(UPDATE_POST_MUTATION, {
     onCompleted: () => {
       toast.success('Post updated')
-      navigate(routes.user({ id: currentUser.id }))
+      navigate(routes.user({ id: post.authorId }))
     },
     onError: (error) => {
       toast.error(error.message)
