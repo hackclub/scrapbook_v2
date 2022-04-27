@@ -16,12 +16,12 @@ const Routes = () => {
 
         // Posts
         <Route path="/share" page={PostNewPostPage} name="newPost" />
-        <Route path="/{username:String}/{id:Int}" page={PostPostPage} name="post" />
-        <Route path="/{username:String}" page={PostPostsPage} name="posts" />
+        <Route path="/{userId:Int}" page={PostPostsPage} name="posts" />
+        <Route path="/{userId:Int}/{postId:Int}" page={PostPostPage} name="post" />
 
-        // <Private unauthenticated="home">
+        <Private unauthenticated="home">
           <Route path="/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
-        // </Private>
+        </Private>
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
