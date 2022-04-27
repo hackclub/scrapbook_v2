@@ -15,6 +15,12 @@ const MainLayout = ({ children }) => {
             <li>
               <Link to={routes.newPost()}>Share</Link>
             </li>
+            <li>
+              <Link to={routes.login()}>Login</Link>
+            </li>
+            <li>
+              <Link to={routes.signup()}>Sign Up</Link>
+            </li>
           </ul>
         </nav>
       </header>
