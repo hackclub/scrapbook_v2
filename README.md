@@ -94,7 +94,7 @@ It should automatically open, but if not, open your server
 
 Start the application server if it hasn't been started yet:
 
-    $ yarn redwood dev
+    $ yarn rw dev
 
 View your GraphQL playground:
 
