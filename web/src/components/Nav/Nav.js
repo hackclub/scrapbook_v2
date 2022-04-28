@@ -16,7 +16,7 @@ const Nav = () => {
         About
       </Link>
       <a
-        href="https://github.com/hackclub/scrapbook"
+        href="https://github.com/hackclub/scrapbook_v2"
         className="nav-link nav-link-github"
         title="GitHub"
       >
