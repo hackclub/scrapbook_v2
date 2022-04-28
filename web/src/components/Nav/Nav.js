@@ -4,29 +4,8 @@ import Flag from './flag'
 import { Link, routes } from '@redwoodjs/router'
 import { useAuth } from '@redwoodjs/auth'
 
-const Join = () => (
-  <Link to={routes.signup()} className="badge">
-    Join
-    <style>{`
-      .badge {
-        background-color: var(--colors-muted);
-        color: var(--colors-background);
-        padding: 3px 12px 1px;
-        margin-left: 16px;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: 0.125s background-color ease-in-out;
-      }
-      .badge:hover,
-      .badge:focus {
-        background-color: var(--colors-purple);
-      }
-    `}</style>
-  </Link>
-)
-
 const Nav = () => {
-  const { isAuthenticated, logOut } = useAuth()
+  const { isAuthenticated, currentUser, logOut } = useAuth()
   return (
     <nav className="nav">
       <Flag />
@@ -47,9 +26,14 @@ const Nav = () => {
         Share
       </Link>
       { isAuthenticated ? (
-        <button onClick={() => logOut()} className="badge">
-          Logout
-        </button>
+        <>
+          <Link to={routes.user({ id: currentUser.id })}>
+            {currentUser.email}
+          </Link>
+          <button onClick={() => logOut()} className="badge">
+            Logout
+          </button>
+        </>
       ) : (
         <>
           <Link to={routes.signup()} className="badge">
