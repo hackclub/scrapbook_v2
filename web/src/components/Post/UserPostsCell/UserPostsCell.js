@@ -5,7 +5,6 @@ import Posts from 'src/components/Post/Posts'
 export const QUERY = gql`
   query FindUserPosts($id: Int!) {
     user(id: $id) {
-      id
       posts {
         id
         authorId
@@ -33,8 +32,6 @@ export const Failure = ({ error }) => (
   <div>{error.message}</div>
 )
 
-export const Success = ({ user, auth }) => {
-  const { isAuthenticated, currentUser } = auth
-
-  return <Posts posts={user.posts} currentUserIsAuthor={isAuthenticated && currentUser.id == user.id}/>
+export const Success = ({ user }) => {
+  return <Posts posts={user.posts}/>
 }

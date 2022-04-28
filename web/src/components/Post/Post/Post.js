@@ -11,7 +11,7 @@ const DELETE_POST_MUTATION = gql`
 `
 
 const Post = ({ post }) => {
-  const { currentUser } = useAuth();
+  const { isAuthenticated, currentUser } = useAuth();
 
   const [deletePost] = useMutation(DELETE_POST_MUTATION, {
     onCompleted: () => {
@@ -41,21 +41,23 @@ const Post = ({ post }) => {
         </li>
         <li>{post.body}</li>
       </ul>
-      <div>
-        <Link
-          to={routes.editPost({ id: post.id })}
-          title={'Edit post ' + post.id}
-        >
-          Edit
-        </Link>
-        <button
-          type="button"
-          title={'Delete post ' + post.id}
-          onClick={() => onDeleteClick(post.id)}
-        >
-          Delete
-        </button>
-      </div>
+      { (isAuthenticated && currentUser.id == post.authorId) &&
+        <div>
+          <Link
+            to={routes.editPost({ id: post.id })}
+            title={'Edit post ' + post.id}
+          >
+            Edit
+          </Link>
+          <button
+            type="button"
+            title={'Delete post ' + post.id}
+            onClick={() => onDeleteClick(post.id)}
+          >
+            Delete
+          </button>
+        </div>
+      }
     </>
   )
 }
