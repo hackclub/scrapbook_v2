@@ -1,5 +1,4 @@
 import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
 
 import PostForm from 'src/components/Post/PostForm'
@@ -28,17 +27,17 @@ const UPDATE_POST_MUTATION = gql`
 export const Loading = () => <div>Loading...</div>
 
 export const Failure = ({ error }) => (
-  <div className="rw-cell-error">{error.message}</div>
+  <div>{error.message}</div>
 )
 
 export const Success = ({ post }) => {
   const [updatePost, { loading, error }] = useMutation(UPDATE_POST_MUTATION, {
     onCompleted: () => {
-      toast.success('Post updated')
+      console.log('Post updated')
       navigate(routes.user({ id: post.authorId }))
     },
     onError: (error) => {
-      toast.error(error.message)
+      console.log(error.message)
     },
   })
 
@@ -50,11 +49,11 @@ export const Success = ({ post }) => {
   }
 
   return (
-    <div className="rw-segment">
-      <header className="rw-segment-header">
-        <h2 className="rw-heading rw-heading-secondary">Edit Post {post.id}</h2>
+    <div>
+      <header>
+        <h2>Edit Post {post.id}</h2>
       </header>
-      <div className="rw-segment-main">
+      <div>
         <PostForm post={post} onSave={onSave} error={error} loading={loading} />
       </div>
     </div>
