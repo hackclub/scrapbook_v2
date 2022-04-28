@@ -1,8 +1,5 @@
-import humanize from 'humanize-string'
-
-import { useAuth } from "@redwoodjs/auth";
+import { useAuth } from '@redwoodjs/auth';
 import { useMutation } from '@redwoodjs/web'
-import { toast } from '@redwoodjs/web/toast'
 import { Link, routes, navigate } from '@redwoodjs/router'
 
 const DELETE_POST_MUTATION = gql`
@@ -13,49 +10,16 @@ const DELETE_POST_MUTATION = gql`
   }
 `
 
-const formatEnum = (values) => {
-  if (values) {
-    if (Array.isArray(values)) {
-      const humanizedValues = values.map((value) => humanize(value))
-      return humanizedValues.join(', ')
-    } else {
-      return humanize(values)
-    }
-  }
-}
-
-const jsonDisplay = (obj) => {
-  return (
-    <pre>
-      <code>{JSON.stringify(obj, null, 2)}</code>
-    </pre>
-  )
-}
-
-const timeTag = (datetime) => {
-  return (
-    datetime && (
-      <time dateTime={datetime} title={datetime}>
-        {new Date(datetime).toUTCString()}
-      </time>
-    )
-  )
-}
-
-const checkboxInputTag = (checked) => {
-  return <input type="checkbox" checked={checked} disabled />
-}
-
 const Post = ({ post }) => {
   const { currentUser } = useAuth();
 
   const [deletePost] = useMutation(DELETE_POST_MUTATION, {
     onCompleted: () => {
-      toast.success('Post deleted')
+      console.log('Post deleted')
       navigate(routes.user({ id: currentUser.id }))
     },
     onError: (error) => {
-      toast.error(error.message)
+      console.log(error.message)
     },
   })
 
@@ -67,48 +31,31 @@ const Post = ({ post }) => {
 
   return (
     <>
-      <div className="rw-segment">
-        <header className="rw-segment-header">
-          <h2 className="rw-heading rw-heading-secondary">
-            Post {post.id} Detail
-          </h2>
-        </header>
-        <table className="rw-table">
-          <tbody>
-            <tr>
-              <th>Id</th>
-              <td>{post.id}</td>
-            </tr>
-            <tr>
-              <th>Created at</th>
-              <td>{timeTag(post.createdAt)}</td>
-            </tr>
-            <tr>
-              <th>Body</th>
-              <td>{post.body}</td>
-            </tr>
-            <tr>
-              <th>Author id</th>
-              <td>{post.authorId}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <nav className="rw-button-group">
+      <ul>
+        <li>
+          <Link
+            to={routes.post({ authorId: post.authorId, postId: post.id })}
+            title={'Show post ' + post.id + ' detail'}>
+            {post.createdAt}
+          </Link>
+        </li>
+        <li>{post.body}</li>
+      </ul>
+      <div>
         <Link
           to={routes.editPost({ id: post.id })}
-          className="rw-button rw-button-blue"
+          title={'Edit post ' + post.id}
         >
           Edit
         </Link>
         <button
           type="button"
-          className="rw-button rw-button-red"
+          title={'Delete post ' + post.id}
           onClick={() => onDeleteClick(post.id)}
         >
           Delete
         </button>
-      </nav>
+      </div>
     </>
   )
 }

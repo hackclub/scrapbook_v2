@@ -46,7 +46,7 @@ const Nav = () => {
       <Link to={routes.newPost()} className="badge">
         Share
       </Link>
-      { (isAuthenticated) ? (
+      { isAuthenticated ? (
         <button onClick={() => logOut()} className="badge">
           Logout
         </button>
