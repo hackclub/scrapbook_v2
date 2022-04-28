@@ -14,53 +14,23 @@ const PostForm = (props) => {
   }
 
   return (
-    <div className="rw-form-wrapper">
+    <div>
       <Form onSubmit={onSubmit} error={props.error}>
-        <FormError
-          error={props.error}
-          wrapperClassName="rw-form-error-wrapper"
-          titleClassName="rw-form-error-title"
-          listClassName="rw-form-error-list"
-        />
-
-        <Label
-          name="body"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
+        <FormError error={props.error} />
+        <Label name="body">
           Body
         </Label>
 
         <TextField
           name="body"
           defaultValue={props.post?.body}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
           validation={{ required: true }}
         />
 
-        <FieldError name="body" className="rw-field-error" />
+        <FieldError name="body" />
 
-        <Label
-          name="authorId"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Author id
-        </Label>
-
-        <NumberField
-          name="authorId"
-          defaultValue={props.post?.authorId}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-
-        <FieldError name="authorId" className="rw-field-error" />
-
-        <div className="rw-button-group">
-          <Submit disabled={props.loading} className="rw-button rw-button-blue">
+        <div>
+          <Submit disabled={props.loading}>
             Save
           </Submit>
         </div>

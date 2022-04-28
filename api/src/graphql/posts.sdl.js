@@ -14,12 +14,10 @@ export const schema = gql`
 
   input CreatePostInput {
     body: String!
-    authorId: Int!
   }
 
   input UpdatePostInput {
     body: String
-    authorId: Int
   }
 
   type Mutation {

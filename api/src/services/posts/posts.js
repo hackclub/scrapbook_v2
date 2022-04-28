@@ -11,6 +11,8 @@ export const post = ({ id }) => {
 }
 
 export const createPost = ({ input }) => {
+  input.authorId = context.currentUser.id
+
   return db.post.create({
     data: input,
   })
