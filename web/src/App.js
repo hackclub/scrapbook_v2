@@ -7,6 +7,7 @@ import Routes from 'src/Routes'
 
 import './styles/app.css'
 import './styles/fonts.css'
+import './styles/themes/default.css'
 
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>

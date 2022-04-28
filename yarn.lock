@@ -2715,6 +2715,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hackclub/icons@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@hackclub/icons@npm:0.0.9"
+  peerDependencies:
+    react: ^16.13.1
+  checksum: 307475291eecfb9a8b626160b0b2bc864cdd467eebdf86035339e8d5bd8aec17c6766de6163d737aa4aec506ad744b3eebeed694f997722bc19ddd554f997c82
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.9.2":
   version: 0.9.5
   resolution: "@humanwhocodes/config-array@npm:0.9.5"
@@ -20530,6 +20539,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@hackclub/icons": ^0.0.9
     "@redwoodjs/core": 1.1.1
   languageName: unknown
   linkType: soft

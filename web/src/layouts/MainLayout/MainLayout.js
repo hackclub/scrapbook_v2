@@ -1,5 +1,6 @@
 import { useAuth } from "@redwoodjs/auth";
 import { Link, routes } from '@redwoodjs/router'
+import Nav from '../../components/Nav'
 
 const MainLayout = ({ children }) => {
   const { isAuthenticated, logOut } = useAuth()
@@ -7,33 +8,7 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <header>
-        <Link to={routes.home()}>
-          <h1>Scrapbook</h1>
-        </Link>
-        <nav>
-          <ul>
-            <li>
-              <Link to={routes.about()}>About</Link>
-            </li>
-            <li>
-              <Link to={routes.newPost()}>Share</Link>
-            </li>
-            { (isAuthenticated) ? (
-              <li>
-                <button onClick={() => logOut()}>Log Out</button>
-              </li>
-            ) : (
-              <>
-                <li>
-                  <Link to={routes.login()}>Login</Link>
-                </li>
-                <li>
-                  <Link to={routes.signup()}>Sign Up</Link>
-                </li>
-              </>
-            )}
-          </ul>
-        </nav>
+      <Nav />
       </header>
       <main>{children}</main>
     </>
