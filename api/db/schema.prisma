@@ -1,5 +1,3 @@
-// This needs to be synced with hackclub/scrappy
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -10,7 +8,8 @@ datasource db {
 }
 
 model Accounts {
-  slackID                 String    @unique(map: "Accounts.slackID_unique")
+  id                      String    @id @default(cuid())
+  slackID                 String?   @unique(map: "Accounts.slackID_unique")
   username                String    @unique(map: "Accounts.username_unique")
   streakCount             Int?
   maxStreaks              Int?
@@ -35,7 +34,7 @@ model Accounts {
 
 model Updates {
   id               String           @id @default(cuid())
-  accountsSlackID  String?
+  accountID        String?
   postTime         DateTime?
   text             String?
   attachments      String[]
@@ -47,10 +46,8 @@ model Updates {
   backupPlaybackID String?
   isLargeVideo     Boolean?
   channel          String?
-  Accounts         Accounts?        @relation(fields: [accountsSlackID], references: [slackID])
+  Accounts         Accounts?        @relation(fields: [accountID], references: [id])
   emojiReactions   EmojiReactions[]
-  clubscrapID      String?          @unique
-  clubscrap        Clubscraps?      @relation(fields: [clubscrapID], references: [id])
 }
 
 model EmojiType {
@@ -69,13 +66,13 @@ model EmojiReactions {
   update        Updates?   @relation(fields: [updateId], references: [id])
 }
 
-model Clubscraps {
-  id          String   @id @default(cuid())
-  createdAt   DateTime
-  description String
-  name        String
-  email       String
-  club        String?
-  timestamp   Float    @unique
-  update      Updates?
+model Login {
+  id                  Int       @id @default(autoincrement())
+  email               String    @unique
+  hashedPassword      String
+  salt                String
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
+  accountId           String
+  account             Accounts?   @relation(fields: [accountId], references: [id])
 }
