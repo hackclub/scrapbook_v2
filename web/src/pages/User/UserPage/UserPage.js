@@ -1,11 +1,13 @@
+import { useAuth } from '@redwoodjs/auth';
+
 import UserCell from 'src/components/User/UserCell'
-import PostsCell from 'src/components/Post/PostsCell'
+import UserPostsCell from 'src/components/Post/UserPostsCell'
 
 const UserPage = ({ id }) => {
   return (
     <>
       <UserCell id={id} />
-      <PostsCell />
+      <UserPostsCell id={id} />
     </>
   )
 }

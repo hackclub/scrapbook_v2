@@ -1,5 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
+import PostsCell from 'src/components/Post/PostsCell'
 
 const Header = ({ reactions, children }) => (
   <>
@@ -91,6 +92,8 @@ const HomePage = () => {
       <MetaTags title="Scrapbook" description="Scrapbook" />
       <Header reactions={[]} />
       <p>Welcome to Scrapbook!</p>
+
+      <PostsCell />
     </>
   )
 }

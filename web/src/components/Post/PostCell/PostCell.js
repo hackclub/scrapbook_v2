@@ -16,7 +16,7 @@ export const Loading = () => <div>Loading...</div>
 export const Empty = () => <div>Post not found</div>
 
 export const Failure = ({ error }) => (
-  <div className="rw-cell-error">{error.message}</div>
+  <div>{error.message}</div>
 )
 
 export const Success = ({ post }) => {

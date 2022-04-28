@@ -6,9 +6,9 @@ export const QUERY = gql`
   query FindPosts {
     posts {
       id
+      authorId
       createdAt
       body
-      authorId
     }
   }
 `
@@ -17,19 +17,14 @@ export const Loading = () => <div>Loading...</div>
 
 export const Empty = () => {
   return (
-    <div className="rw-text-center">
-      {'No posts yet. '}
-      <Link to={routes.newPost()} className="rw-link">
-        {'Create one?'}
-      </Link>
-    </div>
+    <div>No posts yet.</div>
   )
 }
 
 export const Failure = ({ error }) => (
-  <div className="rw-cell-error">{error.message}</div>
+  <div>{error.message}</div>
 )
 
 export const Success = ({ posts }) => {
-  return <Posts posts={posts} />
+  return <Posts posts={posts}/>
 }
