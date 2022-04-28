@@ -2,7 +2,7 @@ import { useAuth } from "@redwoodjs/auth";
 import { Link, routes } from '@redwoodjs/router'
 
 const MainLayout = ({ children }) => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, logOut } = useAuth()
 
   return (
     <>
@@ -20,7 +20,7 @@ const MainLayout = ({ children }) => {
             </li>
             { (isAuthenticated) ? (
               <li>
-                <Link>Log Out</Link>
+                <button onClick={() => logOut()}>Log Out</button>
               </li>
             ) : (
               <>
