@@ -45,7 +45,7 @@ const Nav = () => {
         Share
       </Link>
       <Link to={routes.signup()} className="badge">
-        Join
+        Signup
       </Link>
       <Link to={routes.login()} className="badge">
         Login
