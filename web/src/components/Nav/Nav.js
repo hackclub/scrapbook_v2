@@ -27,7 +27,6 @@ const Join = () => (
 
 const Nav = () => {
   const { isAuthenticated, logOut } = useAuth()
-
   return (
     <nav className="nav">
       <Flag />
@@ -49,7 +48,7 @@ const Nav = () => {
       </Link>
       { (isAuthenticated) ? (
         <button onClick={() => logOut()} className="badge">
-          Log Out
+          Logout
         </button>
       ) : (
         <>
