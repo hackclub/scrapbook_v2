@@ -3,12 +3,14 @@ import { Link, routes } from '@redwoodjs/router'
 import Posts from 'src/components/Post/Posts'
 
 export const QUERY = gql`
-  query FindPosts {
-    posts {
-      id
-      createdAt
-      body
-      authorId
+  query FindUserPosts($id: Int!) {
+    user(id: $id) {
+      posts {
+        id
+        authorId
+        createdAt
+        body
+      }
     }
   }
 `
@@ -30,6 +32,6 @@ export const Failure = ({ error }) => (
   <div className="rw-cell-error">{error.message}</div>
 )
 
-export const Success = ({ posts }) => {
-  return <Posts posts={posts} />
+export const Success = ({ user }) => {
+  return <Posts posts={user.posts} />
 }
