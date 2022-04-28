@@ -1,4 +1,4 @@
-import { useAuth } from "@redwoodjs/auth";
+import { useAuth } from '@redwoodjs/auth';
 import { Link, routes } from '@redwoodjs/router'
 import Nav from '../../components/Nav'
 

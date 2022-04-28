@@ -5,7 +5,7 @@ const Flag = props => (
     className="nav-flag"
     {...props}
   >
-    <style jsx>{`
+    <style>{`
       .nav-flag {
         display: inline-block;
         background-image: url(https://assets.hackclub.com/flag-orpheus-top.svg);

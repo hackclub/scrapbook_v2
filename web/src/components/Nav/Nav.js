@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import Icon from '@hackclub/icons'
 import Flag from './flag'
 import { Link, routes } from '@redwoodjs/router'
+import { useAuth } from '@redwoodjs/auth'
 
 const Join = () => (
   <Link to={routes.signup()} className="badge">
     Join
-    <style jsx>{`
+    <style>{`
       .badge {
         background-color: var(--colors-muted);
         color: var(--colors-background);
@@ -25,6 +26,8 @@ const Join = () => (
 )
 
 const Nav = () => {
+  const { isAuthenticated, logOut } = useAuth()
+
   return (
     <nav className="nav">
       <Flag />
@@ -44,12 +47,21 @@ const Nav = () => {
       <Link to={routes.newPost()} className="badge">
         Share
       </Link>
-      <Link to={routes.signup()} className="badge">
-        Signup
-      </Link>
-      <Link to={routes.login()} className="badge">
-        Login
-      </Link>
+      { (isAuthenticated) ? (
+        <button onClick={() => logOut()} className="badge">
+          Log Out
+        </button>
+      ) : (
+        <>
+          <Link to={routes.signup()} className="badge">
+            Signup
+          </Link>
+          <Link to={routes.login()} className="badge">
+            Login
+          </Link>
+        </>
+      )}
+
       <style>{`
       .badge {
         background-color: var(--colors-muted);
