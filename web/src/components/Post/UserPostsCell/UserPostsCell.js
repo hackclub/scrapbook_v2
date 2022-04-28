@@ -4,8 +4,8 @@ import { useAuth } from '@redwoodjs/auth'
 import Posts from 'src/components/Post/Posts'
 
 export const QUERY = gql`
-  query FindUserPosts($id: Int!) {
-    user(id: $id) {
+  query FindUserPosts($username: String!) {
+    user(username: $username) {
       posts {
         id
         authorId

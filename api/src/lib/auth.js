@@ -23,6 +23,7 @@ export const getCurrentUser = async (session) => {
     where: { id: session.id },
     select: {
       email: true,
+      username: true,
       id: true
     },
   })

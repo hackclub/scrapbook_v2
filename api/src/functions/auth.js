@@ -85,6 +85,16 @@ export const handler = async (event, context) => {
     },
   }
 
+  function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
   const signupOptions = {
     // Whatever you want to happen to your data on new user signup. Redwood will
     // check for duplicate usernames before calling this handler. At a minimum
@@ -107,7 +117,7 @@ export const handler = async (event, context) => {
           email: username,
           hashedPassword: hashedPassword,
           salt: salt,
-          // name: userAttributes.name
+          username: `user-${makeid(10)}`
         },
       })
     },

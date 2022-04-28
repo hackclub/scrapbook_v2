@@ -5,7 +5,10 @@ import { Link, routes } from '@redwoodjs/router'
 import { useAuth } from '@redwoodjs/auth'
 
 const Nav = () => {
-  const { isAuthenticated, currentUser, logOut } = useAuth()
+  const { isAuthenticated, currentUser, logOut, loading } = useAuth()
+
+  if (loading) return null
+
   return (
     <nav className="nav">
       <Flag />
@@ -27,7 +30,7 @@ const Nav = () => {
       </Link>
       { isAuthenticated ? (
         <>
-          <Link to={routes.user({ id: currentUser.id })}>
+          <Link to={routes.user({ username: currentUser.username })}>
             {currentUser.email}
           </Link>
           <button onClick={() => logOut()} className="badge">

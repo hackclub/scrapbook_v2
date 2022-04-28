@@ -1,5 +1,6 @@
 import { useMutation } from '@redwoodjs/web'
 import { navigate, routes } from '@redwoodjs/router'
+import { useAuth } from '@redwoodjs/auth'
 
 import PostForm from 'src/components/Post/PostForm'
 
@@ -31,10 +32,12 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ post }) => {
+  const { currentUser } = useAuth();
+
   const [updatePost, { loading, error }] = useMutation(UPDATE_POST_MUTATION, {
     onCompleted: () => {
       console.log('Post updated')
-      navigate(routes.user({ id: post.authorId }))
+      navigate(routes.user({ username: currentUser.username }))
     },
     onError: (error) => {
       console.log(error.message)

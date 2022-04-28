@@ -5,8 +5,8 @@ const Routes = () => {
   return (
     <Router>
       <Set wrap={MainLayout}>
-        <Route path="/about" page={AboutPage} name="about" />
         <Route path="/" page={HomePage} name="home" />
+        <Route path="/about" page={AboutPage} name="about" />
 
         // Auth
         <Route path="/login" page={LoginPage} name="login" />
@@ -16,7 +16,7 @@ const Routes = () => {
 
         // Posts
         <Route path="/share" page={PostNewPostPage} name="newPost" />
-        <Route path="/{id:Int}" page={UserUserPage} name="user" />
+        <Route path="/{username}" page={UserUserPage} name="user" />
         <Route path="/{authorId:Int}/{postId:Int}" page={PostPostPage} name="post" />
 
         <Private unauthenticated="home">

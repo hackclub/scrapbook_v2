@@ -16,7 +16,7 @@ const Post = ({ post }) => {
   const [deletePost] = useMutation(DELETE_POST_MUTATION, {
     onCompleted: () => {
       console.log('Post deleted')
-      navigate(routes.user({ id: currentUser.id }))
+      navigate(routes.user({ username: currentUser.username }))
     },
     onError: (error) => {
       console.log(error.message)

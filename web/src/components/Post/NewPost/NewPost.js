@@ -17,7 +17,7 @@ const NewPost = () => {
   const [createPost, { loading, error }] = useMutation(CREATE_POST_MUTATION, {
     onCompleted: () => {
       console.log('Post created')
-      navigate(routes.user({ id: currentUser.id }))
+      navigate(routes.user({ username: currentUser.username }))
     },
     onError: (error) => {
       console.log(error.message)
