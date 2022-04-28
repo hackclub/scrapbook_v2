@@ -8,17 +8,14 @@ const Header = ({ reactions, children }) => (
       {children}
       <h1 className='title'>Hack Club’s Scrapbook</h1>
       <p className='description'>
-        A daily diary of what <a href="https://hackclub.com/">Hack Clubbers</a>{' '}
+        A daily diary of what <a href='https://hackclub.com/'>Hack Clubbers</a>{' '}
         are learning & making every day.
       </p>
-      <article className="post-reactions">
-        <h2 className="headline">Explore</h2>
-        {reactions.map(reaction => (
-          <Reaction key={reaction.name} {...reaction} />
-        ))}
+      <article className='post-reactions'>
+        <h2 className='headline'>Explore</h2>
       </article>
     </div>
-    <style jsx>{`
+    <style>{`
       .hero {
         text-align: center;
         padding: 0 12px 48px;
@@ -90,7 +87,7 @@ const HomePage = () => {
   return (
     <>
       <MetaTags title="Scrapbook" description="Scrapbook" />
-      <Header reactions={[]} />
+      <Header />
       <p>Welcome to Scrapbook!</p>
 
       <PostsCell />
