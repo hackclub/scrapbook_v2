@@ -4,16 +4,18 @@ export const users = () => {
   return db.user.findMany()
 }
 
-// export const user = ({ id }) => {
-//   return db.user.findUnique({
-//     where: { id },
-//   })
-// }
-
-export const user = ({ username }) => {
-  return db.user.findUnique({
-    where: { username },
-  })
+export const user = (data) => {
+  if (data.id) {
+    return db.user.findUnique({
+      where: { id: data.id },
+    })
+  } else if (data.username) {
+    return db.user.findUnique({
+      where: { username: data.username },
+    })
+  } else {
+    console.log("User service can't find user")
+  }
 }
 
 export const createUser = ({ input }) => {

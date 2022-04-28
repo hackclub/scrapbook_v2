@@ -1,6 +1,7 @@
 export const schema = gql`
   type User {
     id: Int!
+    username: String!
     email: String!
     hashedPassword: String!
     salt: String!
@@ -10,8 +11,7 @@ export const schema = gql`
   }
 
   type Query {
-    user(id: Int!): User @skipAuth
-    user(username: String!): User @skipAuth
+    user(id: Int, username: String): User @skipAuth
   }
 
   input CreateUserInput {
