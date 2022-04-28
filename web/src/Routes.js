@@ -17,7 +17,7 @@ const Routes = () => {
         // Posts
         <Route path="/share" page={PostNewPostPage} name="newPost" />
         <Route path="/{username}" page={UserUserPage} name="user" />
-        <Route path="/{authorId:Int}/{postId:Int}" page={PostPostPage} name="post" />
+        <Route path="/{username}/{postId:Int}" page={PostPostPage} name="post" />
 
         <Private unauthenticated="home">
           <Route path="/{id:Int}/edit" page={PostEditPostPage} name="editPost" />

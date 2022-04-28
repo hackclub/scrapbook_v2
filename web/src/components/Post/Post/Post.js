@@ -33,11 +33,13 @@ const Post = ({ post }) => {
     <>
       <ul>
         <li>
-          <Link
-            to={routes.post({ authorId: post.authorId, postId: post.id })}
-            title={'Show post ' + post.id + ' detail'}>
-            {post.createdAt}
-          </Link>
+          {post.author?.username && (
+            <Link
+              to={routes.post({ username: post.author.username, postId: post.id })}
+              title={'Show post ' + post.id + ' detail'}>
+              {post.createdAt}
+            </Link>
+          )}
         </li>
         <li>{post.body}</li>
       </ul>

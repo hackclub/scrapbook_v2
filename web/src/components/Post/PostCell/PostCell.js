@@ -6,7 +6,9 @@ export const QUERY = gql`
       id
       createdAt
       body
-      authorId
+      author {
+        username
+      }
     }
   }
 `
