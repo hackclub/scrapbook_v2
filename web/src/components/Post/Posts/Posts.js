@@ -1,6 +1,5 @@
 import { useMutation } from '@redwoodjs/web'
 import { Link, routes } from '@redwoodjs/router'
-import { useAuth } from '@redwoodjs/auth'
 
 import { QUERY } from 'src/components/Post/UserPostsCell'
 

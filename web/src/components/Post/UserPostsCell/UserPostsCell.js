@@ -1,4 +1,5 @@
 import { Link, routes } from '@redwoodjs/router'
+import { useAuth } from '@redwoodjs/auth'
 
 import Posts from 'src/components/Post/Posts'
 
@@ -17,14 +18,21 @@ export const QUERY = gql`
 
 export const Loading = () => <div>Loading...</div>
 
+export const isEmpty = (data, { isDataEmpty }) =>
+  isDataEmpty(data) || data.user.posts.length == 0
+
 export const Empty = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
-    <div>
-      {'No posts yet. '}
-      <Link to={routes.newPost()} className="rw-link">
-        {'Create one?'}
-      </Link>
-    </div>
+    <>
+      <p>No posts yet.</p>
+      { isAuthenticated && (
+        <Link to={routes.newPost()}>
+          Create one?
+        </Link>
+      )}
+    </>
   )
 }
 
