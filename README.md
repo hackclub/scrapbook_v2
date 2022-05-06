@@ -1,3 +1,9 @@
+-------------
+
+> ⚠️ Scrapbook V2 is on hold for the time being!
+
+-------------
+
 # Scrapbook V2
 
 **Better yourself by chronicling your technical journey.**
